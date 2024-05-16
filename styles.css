@@ -1,8 +1,11 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Press Start 2P', cursive;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
 }
 
 header {
@@ -10,18 +13,24 @@ header {
     color: #fff;
     padding: 10px 20px;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
 }
 
 header h1 {
     margin: 0;
+    font-size: 24px;
+}
+
+nav {
+    margin-top: 10px;
 }
 
 nav a {
     color: #fff;
     text-decoration: none;
     margin: 0 10px;
+    font-size: 18px;
 }
 
 nav a:hover {
@@ -34,16 +43,16 @@ main {
 
 #games {
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+    flex-direction: column;
+    align-items: center;
 }
 
 .game-card {
-    border: 1px solid #ccc;
+    border: 2px solid #fff;
     padding: 20px;
-    width: calc(33.333% - 40px);
+    margin: 10px 0;
+    width: 90%;
     box-sizing: border-box;
-    text-align: center;
 }
 
 footer {
@@ -51,6 +60,7 @@ footer {
     color: #fff;
     text-align: center;
     padding: 10px 0;
+    font-size: 14px;
 }
 
 footer a {
@@ -61,3 +71,19 @@ footer a {
 footer a:hover {
     text-decoration: underline;
 }
+
+/* レスポンシブデザイン */
+@media (min-width: 600px) {
+    #games {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .game-card {
+        width: calc(45% - 20px);
+    }
+}
+
+/* Google Fonts からフォントをインポート */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
